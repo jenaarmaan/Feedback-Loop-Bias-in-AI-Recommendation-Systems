@@ -29,7 +29,7 @@ st.markdown("""
         border-radius: 10px;
     }
 </style>
-""", unsafe_content_allowed=True)
+""", unsafe_allow_html=True)
 
 # --- Title and Intro ---
 st.title("🧠 Feedback-Loop Bias in AI Recommendation Systems")
