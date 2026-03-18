@@ -74,14 +74,14 @@ class TopKRecommender:
         sorted_items = sorted(items, key=lambda x: (x.clicks, x.quality), reverse=True)
         return sorted_items[:self.k]
 
-def run_simulation(num_items=100, num_users=50, cycles=20, k=5, feedback_loop_strength=0.5, mitigation=False):
+def run_simulation(num_items=100, num_users=50, cycles=20, k=5, feedback_loop_strength=0.5, mitigation=False, epsilon=0.1):
     """Runs the simulation and returns historical data."""
     # Initialize items
     items = [Item(i, np.random.random()) for i in range(num_items)]
     # Initialize users
     users = [User(i) for i in range(num_users)]
     # Initialize recommender
-    recommender = TopKRecommender(k=k, use_exploration=mitigation)
+    recommender = TopKRecommender(k=k, use_exploration=mitigation, epsilon=epsilon)
     
     history = []
 

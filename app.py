@@ -67,7 +67,8 @@ def get_sim_data(_params):
         cycles=p['cycles'],
         k=p['k_slots'],
         feedback_loop_strength=p['strength'],
-        mitigation=p['use_mitigation']
+        mitigation=p['use_mitigation'],
+        epsilon=p['epsilon']
     )
     return history, items
 
@@ -77,7 +78,8 @@ params = {
     'cycles': cycles,
     'k_slots': k_slots,
     'strength': strength,
-    'use_mitigation': use_mitigation
+    'use_mitigation': use_mitigation,
+    'epsilon': epsilon
 }
 
 if use_mitigation:
@@ -92,7 +94,8 @@ with st.spinner("Running Simulation..."):
         cycles=cycles,
         k=k_slots,
         feedback_loop_strength=strength,
-        mitigation=use_mitigation
+        mitigation=use_mitigation,
+        epsilon=epsilon
     )
 
 # --- Process Results ---
